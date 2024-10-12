@@ -1,9 +1,9 @@
 body {
-    font-family: Open Sans;
+    font-family: Montserrat;
     font-weight: 400;
     box-sizing: border-box;
     color: #fff;
-    background-color: #ffffff;
+    background-color: #141114;
     margin: 0;
     padding: 0;
     overflow-x: hidden; /* Отключаем горизонтальную прокрутку */
@@ -12,15 +12,17 @@ body {
 .container {
     max-width: 1270px; /* Установите ширину контейнера */
     margin: 0 auto;
-    padding: 0 15px;
     box-sizing: border-box;
+    padding: 0 20px;
 }
 
-.main_balance_left {
-    display: none;
+.container_games {
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.header_buttons {
+
+.header_items {
     display: flex;
     justify-content: space-between;
     gap: 30px;
@@ -45,32 +47,31 @@ hr {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
     flex-wrap: wrap; /* Чтобы элементы могли переноситься на новую строку */
 }
 
-.header_upper_items {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
 
 .logo {
     display: block;
     font-size: 30px;
     color: #000000;
 }
+.logo img {
+    display: block;
+    max-width: 200px;
+}
 
 .main_balance {
     padding: 10px 20px;
-    background-color: #000;
+    background-color: #fff;
     border-radius: 20px;
-    cursor: pointer;
+    color: #000;
 }
 
 .games_title {
+    font-weight: 600;
     font-size: 40px;
-    color: #000;
+    color: #fff;
 }
 
 .topup_button {
@@ -87,7 +88,7 @@ hr {
 
 .withdraw_button {
     padding: 10px 20px;
-    background-color: #00FFFF;
+    background-color: #15c9de;
     border-radius: 20px;
     cursor: pointer;
     transition: padding 0.4s ease-in-out; /* Плавный переход для hover */
@@ -115,7 +116,7 @@ hr {
 }
 
 .games_item {
-    background-color: #000000b1;
+    background-color: #fff;
     width: calc(33.33% - 10px); /* 3 квадрата в ряд */
     height: 0; /* Высота будет равна ширине для квадратов */
     padding-bottom: calc(33.33% - 10px); /* Сохраняем квадратные пропорции */
@@ -132,7 +133,7 @@ hr {
 }
 
 .footer {
-    background-color: #fff;
+    background-color: #141114;
     color: white;
     text-align: center;
     padding: 5px 0;
@@ -147,23 +148,36 @@ hr {
     text-align: center;
     align-items: center;
     justify-content: space-between;
-    padding: 30px;
+    padding: 20px;
 }
+
+
 
 .footer-items-row img {
     display: block;
     max-width: 30px;
     max-height: 30px;
     cursor: pointer;
-}
+    padding: 10px 35px;
+    border-radius: 15px;
+    background-color: red
+    }
 
+  .footer-items-row img:nth-child(2){
+    background-color: #15c9de;
+  }
 
 @media (max-width: 768px) {
     .container {
         max-width: 768px;
     }
 
-    .header_buttons {
+    .logo img {
+        max-width: 100px;
+    }
+
+    
+    .header_items{
         display: flex;
         justify-content: space-between;
     }
@@ -180,9 +194,7 @@ hr {
 
    
     
-    .logo {
-        display: none; /* Убираем лого на разрешении 768 и ниже */
-    }
+    
 
 
 
@@ -205,22 +217,41 @@ hr {
 }
 
 @media (max-width: 480px) {
-    .container {
-        max-width: 480px;
-    }
 
+    
+    .logo {
+        display: none; /* Убираем лого на разрешении 768 и ниже */
+    }
+    .main_upper_header {
+        justify-content: center;
+    }
     #header {
         padding-top: 10px;
         padding-bottom: 0px;
     }
+
+    .header_items {
+        justify-content: space-between;
+        text-align: center;
+        align-items: center;
+
+    }
     
+    .main_balance {
+        font-size: 12px;
+        padding: 10px 15px;
+    }
     #main_games {
         padding-top: 10px;
     }
 
-    .main_balance, .topup_button, .withdraw_button {
-        font-size: 12px;
+    .topup_button, .withdraw_button {
+        font-size: 14px;
         padding: 10px 15px;
+    }
+
+    .main_upper_header{
+        padding: 0;
     }
 
     .games_item {
