@@ -53,8 +53,9 @@ hr {
 }
 
 .logo {
+    display: block;
     font-size: 30px;
-    color: #fff;
+    color: #000000;
 }
 
 .main_balance {
@@ -117,6 +118,7 @@ hr {
     padding-bottom: calc(33.33% - 10px); /* Сохраняем квадратные пропорции */
     position: relative;
     box-sizing: border-box;
+    border-radius: 15px;
 }
 
 .games_item > * {
@@ -139,12 +141,18 @@ hr {
 @media (max-width: 768px) {
 
     #header {
-        padding-bottom: 10px;
-
+        padding-top: 10px;
+        padding-bottom: 0px;
     }
+    #main_games {
+
+        padding-top: 10px;
+    }
+
     .main_balance_left {
         display: block;
-        padding: 10px 20px;
+        font-size: 12px;
+        padding: 10px 10px;
     background-color: #000;
     border-radius: 20px;
     cursor: pointer;
@@ -165,15 +173,16 @@ hr {
         margin-left: auto; /* Сдвигаем вправо кнопки */
     }
 
-    .topup_button, .withdraw_button, .main_balance {
-        padding: 10x 60px;
-        font-size: 14px;
+  
+    .topup_button, .withdraw_button {
+        padding: 10x 20px;
+        font-size: 12px;
     }
 
     .games_item {
         width: calc(33.33% - 10px); /* Три квадрата в ряд */
         padding-bottom: calc(33.33% - 10px); /* Сохраняем квадратную форму */
-        height: 200px; /* Увеличиваем высоту для мобильных устройств */
+        height: 180px; /* Увеличиваем высоту для мобильных устройств */
     }
 
     .games_title {
@@ -182,19 +191,22 @@ hr {
 }
 
 @media (max-width: 480px) {
+    
     #header {
-        padding-bottom: 10px;
+        padding-top: 10px;
+        padding-bottom: 0px;
     }
-    .logo {
-        font-size: 16px;
+    #main_games {
+
+        padding-top: 10px;
     }
 
     .main_balance, .topup_button, .withdraw_button {
         font-size: 12px;
-        padding: 10px 30px;
+        padding: 10px 20px;
     }
 
     .games_item {
-        height: 200px; /* Высота для мобильных */
+        height: 180px; /* Высота для мобильных */
     }
 }
