@@ -1,0 +1,247 @@
+body {
+    font-family: Open Sans;
+    font-weight: 400;
+    box-sizing: border-box;
+    color: #fff;
+    background-color: #0080FF;
+}
+
+.container {
+    max-width: 1230px;
+    margin: 0 auto;
+}
+
+hr {
+    border: none; /* Убираем границу */
+    background-color: #000ccc; /* Цвет линии */
+    color: red; /* Цвет линии для IE6-7 */
+    height: 2px; /* Толщина линии */
+}
+
+#header {
+    padding-bottom: 50px;
+}
+
+.mobile_header_upper_items{
+    display: none;
+}
+
+.main_upper_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.header_upper_items {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.logo {
+    font-size: 30px;
+    color: #fff;
+}
+
+.main_balance {
+    padding: 10px 40px;
+    background-color: #000;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+
+.topup_button {
+    padding: 10px 40px;
+    background-color: red;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.topup_button:hover {
+    padding: 11px 42px;
+    transition: 0.4s ease-in-out;
+}
+.topup_button:not(:hover) {
+    padding: 10px 40px;
+    transition: 0.4s ease-in-out;
+}
+
+
+.withdraw_button {
+    padding: 10px 40px;
+    background-color: #00FFFF;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.withdraw_button:hover {
+    padding: 11px 42px;
+    transition: 0.4s ease-in-out;
+}
+.withdraw_button:not(:hover) {
+    padding: 10px 40px;
+    transition: 0.4s ease-in-out;
+}
+
+#main_games {
+    padding-top: 50px;
+    padding: 20px;
+}
+
+.games_title {
+    font-size: 35px;
+    padding-bottom: 15px;
+}
+
+.games_row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px
+    ;
+}
+
+.games_item {
+    padding: 180px 180px;
+    background-color: #fff;
+    gap: 30px;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+
+@media(max-width: 768px){
+    .container {
+        max-width: 768px;
+    }
+
+#header {
+    padding-bottom: 20px;
+}
+
+.main_upper_header {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.mobile_header_upper_items{
+    display: block;
+}
+
+.mobile-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.mobile-header-row{
+    display: flex;
+}
+.mobile_header_items {
+    display: flex;
+    gap: 20px;
+}
+
+
+.header_upper_items {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.logo {
+    display: none;
+    font-size: 16px;
+    color: #fff;
+}
+
+.main_balance {
+    padding: 10px 40px;
+    background-color: #000;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+
+.topup_button {
+    padding: 10px 40px;
+    background-color: red;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.topup_button:hover {
+    padding: 11px 42px;
+    transition: 0.4s ease-in-out;
+}
+.topup_button:not(:hover) {
+    padding: 10px 40px;
+    transition: 0.4s ease-in-out;
+}
+
+
+.withdraw_button {
+    padding: 10px 40px;
+    background-color: #00FFFF;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.withdraw_button:hover {
+    padding: 11px 42px;
+    transition: 0.4s ease-in-out;
+}
+.withdraw_button:not(:hover) {
+    padding: 10px 40px;
+    transition: 0.4s ease-in-out;
+}
+
+#main_games {
+    padding-top: 50px;
+    padding: 20px;
+}
+
+.games_title {
+    font-size: 35px;
+    padding-bottom: 15px;
+}
+
+.games_row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.games_item {
+    padding: 80px 80px;
+    background-color: #fff;
+    gap: 10px;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+    
+}
