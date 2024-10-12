@@ -130,15 +130,31 @@ hr {
 }
 
 .footer {
-    background-color: #333;
+    background-color: #fff;
     color: white;
     text-align: center;
-    padding: 10px 0;
+    padding: 5px 0;
     position: fixed; /* Фиксируем футер внизу */
     bottom: 0;
     left: 0;
     width: 100%;
 }
+
+.footer-items-row {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.footer-items-row img {
+    display: block;
+    max-width: 30px;
+    max-height: 30px;
+    cursor: pointer;
+}
+
 
 @media (max-width: 768px) {
     .container {
