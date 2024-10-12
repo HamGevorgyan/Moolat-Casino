@@ -22,7 +22,9 @@ body {
 
 .header_buttons {
     display: flex;
-    gap: 20px;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
 }
 
 hr {
@@ -161,10 +163,11 @@ hr {
         max-width: 768px;
     }
 
-    .mobile_header_items {
+    .header_buttons {
         display: flex;
         justify-content: space-between;
     }
+
     
     #header {
         padding-top: 10px;
@@ -181,13 +184,9 @@ hr {
         display: none; /* Убираем лого на разрешении 768 и ниже */
     }
 
-    .main_upper_header {
-        justify-content: flex-start; /* Оставляем выравнивание по левому краю */
-    }
 
-    .header_buttons {
-        margin-left: auto; /* Сдвигаем вправо кнопки */
-    }
+
+
 
     .topup_button, .withdraw_button {
         padding: 10px 20px;
