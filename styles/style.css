@@ -4,25 +4,37 @@ body {
     box-sizing: border-box;
     color: #fff;
     background-color: #0080FF;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Отключаем горизонтальную прокрутку */
 }
 
 .container {
-    max-width: 1230px;
+    max-width: 100%;
     margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+.main_balance_left {
+    display: none;
+}
+
+.header_buttons {
+    display: flex;
+    gap: 20px;
 }
 
 hr {
-    border: none; /* Убираем границу */
-    background-color: #000ccc; /* Цвет линии */
-    color: red; /* Цвет линии для IE6-7 */
-    height: 2px; /* Толщина линии */
+    border: none;
+    background-color: #000ccc;
+    height: 2px;
 }
 
 #header {
     padding-bottom: 50px;
 }
 
-.mobile_header_upper_items{
+.mobile_header_upper_items {
     display: none;
 }
 
@@ -31,11 +43,12 @@ hr {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    flex-wrap: wrap; /* Чтобы элементы могли переноситься на новую строку */
 }
 
 .header_upper_items {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
 }
 
@@ -45,45 +58,34 @@ hr {
 }
 
 .main_balance {
-    padding: 10px 40px;
+    padding: 10px 20px;
     background-color: #000;
     border-radius: 20px;
     cursor: pointer;
 }
 
-
-
 .topup_button {
-    padding: 10px 40px;
+    padding: 10px 20px;
     background-color: red;
     border-radius: 20px;
     cursor: pointer;
+    transition: padding 0.4s ease-in-out; /* Плавный переход для hover */
 }
 
 .topup_button:hover {
-    padding: 11px 42px;
-    transition: 0.4s ease-in-out;
+    padding: 11px 22px; /* Увеличение размера кнопки при наведении */
 }
-.topup_button:not(:hover) {
-    padding: 10px 40px;
-    transition: 0.4s ease-in-out;
-}
-
 
 .withdraw_button {
-    padding: 10px 40px;
+    padding: 10px 20px;
     background-color: #00FFFF;
     border-radius: 20px;
     cursor: pointer;
+    transition: padding 0.4s ease-in-out; /* Плавный переход для hover */
 }
 
 .withdraw_button:hover {
-    padding: 11px 42px;
-    transition: 0.4s ease-in-out;
-}
-.withdraw_button:not(:hover) {
-    padding: 10px 40px;
-    transition: 0.4s ease-in-out;
+    padding: 11px 22px; /* Увеличение размера кнопки при наведении */
 }
 
 #main_games {
@@ -100,14 +102,23 @@ hr {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 30px
-    ;
+    gap: 10px;
 }
 
 .games_item {
-    padding: 180px 180px;
     background-color: #fff;
-    gap: 30px;
+    width: calc(33.33% - 10px); /* 3 квадрата в ряд */
+    height: 0; /* Высота будет равна ширине для квадратов */
+    padding-bottom: calc(33.33% - 10px); /* Сохраняем квадратные пропорции */
+    position: relative;
+    box-sizing: border-box;
+}
+
+.games_item > * {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .footer {
@@ -115,133 +126,75 @@ hr {
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: sticky;
+    position: fixed; /* Фиксируем футер внизу */
     bottom: 0;
+    left: 0;
     width: 100%;
 }
 
+/* Адаптация под мобильные устройства */
+@media (max-width: 768px) {
 
-@media(max-width: 768px){
-    .container {
-        max-width: 768px;
+    .main_balance_left {
+    display: block;
+    padding: 8px 24px;
+     font-size: 14px;
+    background-color: #000;
+    border-radius: 20px;
+    cursor: pointer;
+    }
+    .logo {
+        display: none;
+        font-size: 20px;
     }
 
-#header {
-    padding-bottom: 20px;
-}
+    .mobile_balance_row, .mobile_header_items {
+        display: block;
+       }
 
-.main_upper_header {
+   .mobile-header-row {
+    display: flex;
+    justify-content: space-between;
+   }
+
+   .main_balance {
     display: none;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-}
-.mobile_header_upper_items{
-    display: block;
-}
+   }
+   
 
-.mobile-header-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-}
+    .main_balance, .topup_button, .withdraw_button {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
 
-.mobile-header-row{
-    display: flex;
-}
-.mobile_header_items {
-    display: flex;
-    gap: 20px;
+    .games_item {
+        width: calc(33.33% - 10px); /* Три квадрата в ряд */
+        height: auto; /* Убираем фиксированную высоту */
+        padding-bottom: calc(33.33% - 10px); /* Сохраняем квадратную форму */
+    }
+
+    .games_title {
+        font-size: 24px;
+    }
 }
 
+@media (max-width: 480px) {
+    .logo {
+        display: none;
+        font-size: 16px;
+    }
 
-.header_upper_items {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
+    .main_balance, .topup_button, .withdraw_button {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
 
-.logo {
-    display: none;
-    font-size: 16px;
-    color: #fff;
-}
+    .games_item {
+        width: calc(33.33% - 10px); /* Три квадрата в ряд */
+        padding-bottom: calc(33.33% - 10px); /* Сохраняем квадратную форму */
+    }
 
-.main_balance {
-    padding: 10px 40px;
-    background-color: #000;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-
-
-.topup_button {
-    padding: 10px 40px;
-    background-color: red;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.topup_button:hover {
-    padding: 11px 42px;
-    transition: 0.4s ease-in-out;
-}
-.topup_button:not(:hover) {
-    padding: 10px 40px;
-    transition: 0.4s ease-in-out;
-}
-
-
-.withdraw_button {
-    padding: 10px 40px;
-    background-color: #00FFFF;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.withdraw_button:hover {
-    padding: 11px 42px;
-    transition: 0.4s ease-in-out;
-}
-.withdraw_button:not(:hover) {
-    padding: 10px 40px;
-    transition: 0.4s ease-in-out;
-}
-
-#main_games {
-    padding-top: 50px;
-    padding: 20px;
-}
-
-.games_title {
-    font-size: 35px;
-    padding-bottom: 15px;
-}
-
-.games_row {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.games_item {
-    padding: 80px 80px;
-    background-color: #fff;
-    gap: 10px;
-}
-
-.footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: sticky;
-    bottom: 0;
-    width: 100%;
-}
-
-    
+    .games_title {
+        font-size: 18px;
+    }
 }
