@@ -3,7 +3,7 @@ body {
     font-weight: 400;
     box-sizing: border-box;
     color: #fff;
-    background-color: #0080FF;
+    background-color: #ffffff;
     margin: 0;
     padding: 0;
     overflow-x: hidden; /* Отключаем горизонтальную прокрутку */
@@ -64,6 +64,11 @@ hr {
     cursor: pointer;
 }
 
+.games_title {
+    font-size: 40px;
+    color: #000;
+}
+
 .topup_button {
     padding: 10px 20px;
     background-color: red;
@@ -106,7 +111,7 @@ hr {
 }
 
 .games_item {
-    background-color: #fff;
+    background-color: #000000b1;
     width: calc(33.33% - 10px); /* 3 квадрата в ряд */
     height: 0; /* Высота будет равна ширине для квадратов */
     padding-bottom: calc(33.33% - 10px); /* Сохраняем квадратные пропорции */
@@ -131,46 +136,44 @@ hr {
     left: 0;
     width: 100%;
 }
-
-/* Адаптация под мобильные устройства */
 @media (max-width: 768px) {
 
+    #header {
+        padding-bottom: 10px;
+
+    }
     .main_balance_left {
-    display: block;
-    padding: 8px 24px;
-     font-size: 14px;
+        display: block;
+        padding: 10px 20px;
     background-color: #000;
     border-radius: 20px;
     cursor: pointer;
     }
-    .logo {
+    .main_balance {
         display: none;
-        font-size: 20px;
+    }
+    .logo {
+        display: none; /* Убираем лого на разрешении 768 и ниже */
     }
 
-    .mobile_balance_row, .mobile_header_items {
-        display: block;
-       }
+    .main_upper_header {
+        justify-content: flex-start; /* Оставляем выравнивание по левому краю */
+    }
 
-   .mobile-header-row {
-    display: flex;
-    justify-content: space-between;
-   }
 
-   .main_balance {
-    display: none;
-   }
-   
+    .header_buttons {
+        margin-left: auto; /* Сдвигаем вправо кнопки */
+    }
 
-    .main_balance, .topup_button, .withdraw_button {
-        padding: 8px 10px;
+    .topup_button, .withdraw_button, .main_balance {
+        padding: 10x 60px;
         font-size: 14px;
     }
 
     .games_item {
         width: calc(33.33% - 10px); /* Три квадрата в ряд */
-        height: auto; /* Убираем фиксированную высоту */
         padding-bottom: calc(33.33% - 10px); /* Сохраняем квадратную форму */
+        height: 200px; /* Увеличиваем высоту для мобильных устройств */
     }
 
     .games_title {
@@ -179,22 +182,19 @@ hr {
 }
 
 @media (max-width: 480px) {
+    #header {
+        padding-bottom: 10px;
+    }
     .logo {
-        display: none;
         font-size: 16px;
     }
 
     .main_balance, .topup_button, .withdraw_button {
-        padding: 6px 8px;
         font-size: 12px;
+        padding: 10px 30px;
     }
 
     .games_item {
-        width: calc(33.33% - 10px); /* Три квадрата в ряд */
-        padding-bottom: calc(33.33% - 10px); /* Сохраняем квадратную форму */
-    }
-
-    .games_title {
-        font-size: 18px;
+        height: 200px; /* Высота для мобильных */
     }
 }
