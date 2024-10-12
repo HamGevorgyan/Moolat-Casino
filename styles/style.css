@@ -1,6 +1,6 @@
 body {
     font-family: Montserrat;
-    font-weight: 400;
+    font-weight: 600;
     box-sizing: border-box;
     color: #fff;
     background-color: #141114;
@@ -36,7 +36,7 @@ hr {
 }
 
 #header {
-    padding-bottom: 50px;
+    padding-top: 50px;
 }
 
 .mobile_header_upper_items {
@@ -99,13 +99,13 @@ hr {
 }
 
 #main_games {
-    padding-top: 50px;
+    padding-top: 100px;
     padding: 20px;
 }
 
 .games_title {
     font-size: 35px;
-    padding-bottom: 15px;
+    padding-bottom: 20px;
 }
 
 .games_row {
@@ -120,11 +120,17 @@ hr {
     width: calc(33.33% - 10px); /* 3 квадрата в ряд */
     height: 0; /* Высота будет равна ширине для квадратов */
     padding-bottom: calc(33.33% - 10px); /* Сохраняем квадратные пропорции */
-    position: relative;
     box-sizing: border-box;
     border-radius: 15px;
+    cursor: pointer;
+    
 }
-
+.games_item:first-child{
+    background-image: url('/images/mines.JPG');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
 .games_item > * {
     position: absolute;
     top: 50%;
@@ -184,12 +190,12 @@ hr {
 
     
     #header {
-        padding-top: 10px;
-        padding-bottom: 0px;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
     
     #main_games {
-        padding-top: 10px;
+        padding-top: 50px;
     }
 
    
@@ -242,7 +248,7 @@ hr {
         padding: 10px 15px;
     }
     #main_games {
-        padding-top: 10px;
+        padding-top: 50px;
     }
 
     .topup_button, .withdraw_button {
