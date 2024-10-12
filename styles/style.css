@@ -10,11 +10,12 @@ body {
 }
 
 .container {
-    max-width: 100%;
+    max-width: 1270px; /* Установите ширину контейнера */
     margin: 0 auto;
     padding: 0 15px;
     box-sizing: border-box;
 }
+
 .main_balance_left {
     display: none;
 }
@@ -138,28 +139,28 @@ hr {
     left: 0;
     width: 100%;
 }
-@media (max-width: 768px) {
 
+@media (max-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+
+    .mobile_header_items {
+        display: flex;
+        justify-content: space-between;
+    }
+    
     #header {
         padding-top: 10px;
         padding-bottom: 0px;
     }
+    
     #main_games {
-
         padding-top: 10px;
     }
 
-    .main_balance_left {
-        display: block;
-        font-size: 12px;
-        padding: 10px 10px;
-    background-color: #000;
-    border-radius: 20px;
-    cursor: pointer;
-    }
-    .main_balance {
-        display: none;
-    }
+   
+    
     .logo {
         display: none; /* Убираем лого на разрешении 768 и ниже */
     }
@@ -168,19 +169,17 @@ hr {
         justify-content: flex-start; /* Оставляем выравнивание по левому краю */
     }
 
-
     .header_buttons {
         margin-left: auto; /* Сдвигаем вправо кнопки */
     }
 
-  
     .topup_button, .withdraw_button {
-        padding: 10x 20px;
+        padding: 10px 20px;
         font-size: 12px;
     }
 
     .games_item {
-        width: calc(33.33% - 10px); /* Три квадрата в ряд */
+        width: calc(33.33% - 9px); /* Три квадрата в ряд */
         padding-bottom: calc(33.33% - 10px); /* Сохраняем квадратную форму */
         height: 180px; /* Увеличиваем высоту для мобильных устройств */
     }
@@ -191,19 +190,22 @@ hr {
 }
 
 @media (max-width: 480px) {
-    
+    .container {
+        max-width: 480px;
+    }
+
     #header {
         padding-top: 10px;
         padding-bottom: 0px;
     }
+    
     #main_games {
-
         padding-top: 10px;
     }
 
     .main_balance, .topup_button, .withdraw_button {
         font-size: 12px;
-        padding: 10px 20px;
+        padding: 10px 15px;
     }
 
     .games_item {
